@@ -1,0 +1,231 @@
+.contactContent {
+    background: linear-gradient(119deg, $color-1 65%, transparent 120%);
+    border-radius: $border-raduis;
+    width: 100%;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 30% 40% 35%;
+    grid-template-areas: 
+    "1"
+    "2"
+    "4";
+    font-size:2%;
+
+    .header {
+        grid-area: 1;
+        width: 100%;
+        position: relative;
+        background: linear-gradient(100deg, $color-1 50%, transparent 300%);
+        height: 350px;
+        font-size:2%;
+
+        &:before {
+            content: '';
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            font-size:2%;
+            filter: grayscale(100%);
+        }
+        &:after {
+            content: '';
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 300px;
+            background: url(../../media/eeee.jpg) no-repeat center /cover;
+
+        }
+    }
+
+
+
+.contactBox {
+    grid-area: 2;
+    background: $color-5;
+    margin: 0 auto;
+    padding: 1rem 3rem;
+    z-index: 2;
+    border-radius: $border-raduis;
+    box-shadow: 0 3px 10px #333;
+    width: 50%;
+    min-width: 440px;
+    min-height: 200px;
+
+    h1 {
+        text-align: center;
+        margin-top: 0.3rem;
+        position: relative;
+        color: $black;
+
+        &:after {
+            content: '';
+            height: 1px;
+            width: 50%;
+            background: linear-gradient(115deg, $color-1 50%, transparent 100%);
+            position: absolute;
+            bottom: -35px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    }
+    ul {
+        height: 72%;
+        width: inherit;
+        display: grid;
+        margin-top: 3.5rem;
+         
+        li {
+            position: relative;
+        }
+
+        i {
+            font-size: 1.4rem;
+            position: absolute;
+            transform: translateY(2px);
+            color: $black;
+        }
+        span {
+            font-size: 1.4rem;
+            position: absolute;
+            transform: translateX(52px);
+            background: transparent;
+          
+            border: none;
+            outline: none;
+            width: 350px;
+            transition: 0.2s ease;
+        }
+        .clickInput:hover {
+            transform: translateX(56px);
+            cursor: pointer;
+        }
+    }
+}
+
+.socialNetwork {
+    grid-area: 3;
+    @include verticalCenter;
+
+    ul {
+        display: flex;
+        text-align: center;
+        width: 100%;
+        justify-content: space-around;
+
+        a {
+            width: 15%;
+            height: 8%;
+            font-size: 1.2rem;
+            background: $color-5;
+            border-radius: $border-raduis;
+            display: inline-block;
+            padding: 0.7rem 0;
+            box-shadow: $shodow;
+            transform: scaleY(0);
+            transform-origin: top;
+            transition: 0.5s ease;
+            transition: scale 0.1s;
+           
+
+        &:hover {
+                background: linear-gradient(115deg, $color-1 50%, transparent 100%);
+                color: $color-5;
+            }
+
+            i {
+                color: $black;
+                margin-top: 0.3rem;
+            }
+        }
+
+
+            @mixin networkAmin($timeout) {
+                animation: pop 1s forwards;
+                animation-delay: $timeout;
+            }
+            @keyframes pop {
+                to {
+                    transform: scale(1);
+                }
+            }
+            a:nth-child(1) {
+                @include networkAmin(0.4s);
+            }
+            a:nth-child(2) {
+                @include networkAmin(0.8s);
+            }
+            a:nth-child(3) {
+                @include networkAmin(1.2s);
+            }
+            a:nth-child(4) {
+                @include networkAmin(1.6s);
+            }
+        }
+    }
+}
+
+
+
+
+
+@media screen and (max-width: 950px) {
+    .contactContent{
+        h1 {
+            font-size: 1.2rem !important;
+        }
+        .contactBox {
+            padding-top: 1.2rem !important;
+        
+            width: 40px;
+        }
+
+        .clickInput {
+            font-size: 0.9rem;
+            position: absolute;
+        }
+    }
+}
+
+@media screen and (max-width: 850px) {
+    .contactContent {
+        .contactBox {
+            min-width: 50% !important;
+            height: 300px;
+            
+        }
+        h4 {
+            font-size: 1rem !important;
+        }
+        .socialNetwork ul {
+            padding-top: 110px;
+            padding-bottom: 70px;}
+        span {
+            font-size: 1.5rem !important;
+            padding: 0.1rem 0.2rem !important;
+        }
+    }
+}
+
+
+@media screen and (max-width: 500px){
+    .contactContent {
+        .contactBox {
+            min-width: 70% !important;
+            height: 300px;
+            
+        }
+        .socialNetwork ul {
+            padding-top: 110px;
+            padding-bottom: 70px;
+        
+        }
+        span {
+            font-size: 0.8em !important;
+        }
+        h4 {
+            font-size: 0.8rem !important;
+        }
+    }
+}

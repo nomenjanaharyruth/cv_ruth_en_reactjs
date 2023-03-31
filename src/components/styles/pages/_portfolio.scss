@@ -1,0 +1,19 @@
+
+
+@media screen and (max-width: 520px){
+    .radioDisplay {
+        display: none !important;
+    }
+    .portfolioContent {
+        grid-template-rows: 1fr !important;
+
+        .project {
+            grid-template-rows: 20px !important;
+            width: 110% !important;
+
+            img {
+                height: 100% !important;
+            }
+        }
+    }
+}

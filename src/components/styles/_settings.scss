@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
+@import  'font-awesome';
+
+$font-1: 'Tahoma', cursive;
+$font-2: 'Microsoft Himalaya', sans-serif;
+$font-3: 'Verdana', seri;
+
+
+$color-1: #0f0f10;
+$color-5: #eef2f3;
+$black: #333;
+
+:root {
+    --dark-body-bg-color: #242424;
+    --dark-sidebar-bg-color: #171717;
+    --dark-text-color: #d8d8d8;
+    --dark-title-color: #ffffff;
+    
+}
+
+
+
+$border-raduis: 29px;
+$shodow: 0 1px 6px;
+$minheight: 95vh;
+
+
+@mixin verticalCenter {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin: 1rem auto;
+    max-width: 1300px;
+    font-family: $font-1;
+    color: $black;
+   background: #1a1ae6;
+}
+.dark {
+    background: #19191a;
+    color: #ffff;
+}
+
+button {
+    cursor: pointer;
+}
+
+li {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+    color: $black;
+    cursor: pointer;
+}
+
+a:visited {
+    color: $black;
+}
+
+.home, .knowedges,
+ .portfolio, .contact {
+    display: flex;
+    @media screen and (max-width: 870px){
+        display: block !important;
+    }
+        
+    }
+
+    .homeContent, .knowedgesContent, .portfolioContent,
+    .contactContent {
+            margin-left: 0.4rem;
+            padding: 0%;
+            border-radius: 5%;
+
+        @media screen and (max-width: 850px){
+            margin-left: 0 !important;
+        }
+    }
+
+
